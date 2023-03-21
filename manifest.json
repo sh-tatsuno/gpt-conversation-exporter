@@ -1,0 +1,38 @@
+{
+    "manifest_version": 3,
+    "name": "OpenAI Chat Exporter",
+    "version": "0.1.0",
+    "description": "Export OpenAI chat history as Markdown or PDF",
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "48": "icon.png"
+      }
+    },
+    "permissions": [
+      "activeTab",
+      "storage"
+    ],
+    "icons": {
+      "48": "icon.png"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://chat.openai.com/chat/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+              "script/jspdf.min.js"
+            ],
+            "matches": [
+              "https://example.com/*"
+            ]
+          }
+    ],
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'"
+    }
+}

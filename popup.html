@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      width: 300px;
+      padding: 10px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    button {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="notOpenAI">
+    <p>This is not the OpenAI webpage.</p>
+  </div>
+  <div id="exportOptions" style="display: none;">
+    <p>Export OpenAI chat history:</p>
+    <button id="exportMarkdown">Export as Markdown</button>
+    <button id="exportPDF">Export as PDF</button>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
