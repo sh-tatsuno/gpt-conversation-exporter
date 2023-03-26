@@ -3,7 +3,8 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.action === 'exportChat') {
       const userMessages = Array.from(document.querySelectorAll('.items-start')).map(message => {
         const text = message.textContent;
-        return text;
+        // TODO: extract proper author
+        return {author: "author", text};
       });
 
       const aiMessages = Array.from(document.querySelectorAll('.markdown')).map(message => {
@@ -18,7 +19,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       //   return positionA - positionB;
       // });
 
-      sendResponse({ userMessages });
+      sendResponse({ messages: userMessages });
     }
   });
 
