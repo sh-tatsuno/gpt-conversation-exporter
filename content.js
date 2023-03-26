@@ -5,19 +5,19 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         const text = message.textContent;
         return text;
       });
-  
+
       const aiMessages = Array.from(document.querySelectorAll('.markdown')).map(message => {
         const text = message.textContent;
         return text;
       });
-  
+
       // Merge and sort user and AI messages based on their position in the chat
       // const messages = userMessages.concat(aiMessages).sort((a, b) => {
       //   const positionA = Array.from(a.parentElement.children).indexOf(a);
       //   const positionB = Array.from(b.parentElement.children).indexOf(b);
       //   return positionA - positionB;
       // });
-  
+
       sendResponse({ userMessages });
     }
   });
